@@ -52,6 +52,9 @@ allow mediaserver rpmsg_device:chr_file rw_file_perms;
 # Inter System processes communicate over named pipe (FIFO)
 allow mediaserver system_server:fifo_file r_file_perms;
 
+# Allow ViPER4Android in enforcing mode.
+allow mediaserver mediaserver_tmpfs:file { read write execute };
+ 
 # Camera data
 r_dir_file(mediaserver, camera_data_file)
 r_dir_file(mediaserver, media_rw_data_file)
